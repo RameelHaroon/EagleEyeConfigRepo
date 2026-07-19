@@ -9,6 +9,11 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+    security:
+      oauth2:
+        resourceserver:
+          jwt:
+            issuer-uri: http://keycloak:8080/realms/eagleeye
   datasource:
     platform: postgres
     url: jdbc:postgresql://database:5432/eagle_eye_local
