@@ -1,6 +1,13 @@
 tracer:
   property: "I AM THE DEFAULT"
+
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://keycloak:8080/realms/eagleeye
+
   jpa:
     database: POSTGRESQL
     show-sql: true
@@ -9,11 +16,7 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-    security:
-      oauth2:
-        resourceserver:
-          jwt:
-            issuer-uri: http://keycloak:8080/realms/eagleeye
+
   datasource:
     platform: postgres
     url: jdbc:postgresql://database:5432/eagle_eye_local
@@ -21,7 +24,9 @@ spring:
     password: "{cipher}3008767880a73cf550e418e995d983394b0a0b5d1c7ec41123ee071d20861bf7"
     testWhileIdle: true
     validationQuery: SELECT 1
+
   database:
     driverClassName: org.postgresql.Driver
+
 example:
   property: "I AM THE DEFAULT EXAMPLE PROPERTY"
